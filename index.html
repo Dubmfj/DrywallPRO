@@ -3,7 +3,97 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DrywallPro — Calidad a tiempo</title>
+
+  <!-- ═══════════════════════════════════════
+       SEO BÁSICO
+       → Cambiar: NOMBRE_NEGOCIO, CIUDAD, DESCRIPCION
+  ═══════════════════════════════════════ -->
+  <title>DrywallPro — Instalación y Reparación de Drywall en Lima</title>
+  <meta name="description"        content="Especialistas en instalación y reparación de drywall en Lima. Tabiques, cielorrasos y reparaciones con acabado profesional. Presupuesto sin cargo. ¡Llámanos!"/>
+  <meta name="keywords"           content="drywall Lima, instalación drywall, tabiques drywall, cielorrasos drywall, reparación drywall, construcción en seco Lima"/>
+  <meta name="author"             content="DrywallPro"/>
+  <meta name="robots"             content="index, follow"/>
+  <link rel="canonical"           href="https://www.TU-DOMINIO.com/"/>
+
+  <!-- ═══════════════════════════════════════
+       OPEN GRAPH (Facebook, WhatsApp, LinkedIn)
+       → Cambiar: URL, imagen og y descripción
+  ═══════════════════════════════════════ -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://www.TU-DOMINIO.com/"/>
+  <meta property="og:title"       content="DrywallPro — Instalación y Reparación de Drywall en Lima"/>
+  <meta property="og:description" content="Especialistas en drywall en Lima. Tabiques, cielorrasos y reparaciones con garantía. Presupuesto sin cargo."/>
+  <meta property="og:image"       content="https://www.TU-DOMINIO.com/img/og-image.jpg"/>
+  <meta property="og:locale"      content="es_PE"/>
+
+  <!-- ═══════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="DrywallPro — Instalación y Reparación de Drywall en Lima"/>
+  <meta name="twitter:description" content="Especialistas en drywall en Lima. Tabiques, cielorrasos y reparaciones con garantía."/>
+  <meta name="twitter:image"       content="https://www.TU-DOMINIO.com/img/og-image.jpg"/>
+
+  <!-- ═══════════════════════════════════════
+       SCHEMA.ORG — LocalBusiness
+       → MUY IMPORTANTE para aparecer en Google Maps
+         y búsquedas locales tipo "drywall cerca de mí"
+       → Cambiar: name, telephone, address, geo, url, openingHours
+  ═══════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "DrywallPro",
+    "description": "Especialistas en instalación y reparación de drywall en Lima. Tabiques, cielorrasos y acabados profesionales.",
+    "url": "https://www.TU-DOMINIO.com",
+    "telephone": "+51-999-999-999",
+    "email": "contacto@TU-DOMINIO.com",
+    "image": "https://www.TU-DOMINIO.com/img/og-image.jpg",
+    "priceRange": "$$",
+    "currenciesAccepted": "PEN",
+    "paymentAccepted": "Cash, Bank Transfer",
+    "areaServed": {
+      "@type": "City",
+      "name": "Lima"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "TU DIRECCIÓN",
+      "addressLocality": "Lima",
+      "addressRegion": "Lima",
+      "postalCode": "15000",
+      "addressCountry": "PE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-12.0464",
+      "longitude": "-77.0428"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "14:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/TU-PAGINA",
+      "https://www.instagram.com/TU-CUENTA"
+    ]
+  }
+  </script>
+
+  <!-- Fuentes y estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
@@ -14,18 +104,30 @@
     <div class="header-main">
 
       <div class="logo">
-        <div class="logo-icon">🏗️</div>
+        <div class="logo-icon">
+          <a href="index.html">🏗️</a>
+        </div>
         <div class="logo-text">
-          <span class="logo-name">DrywallPro</span>
-          <span class="logo-tagline">Calidad. A tiempo.</span>
+          <span class="logo-name">
+          <a href="index.html">DrywallPro</a>
+          </span>
+          <span class="logo-tagline">
+            <a href="index.html">Calidad. A tiempo.</a>
+          </span>
         </div>
       </div>
 
-      <nav>
+      <nav id="main-nav">
         <a href="#">Acerca de</a>
-        <a href="#">Contacto</a>
         <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
       </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
@@ -35,20 +137,29 @@
     </div>
   </header>
 
+  <!-- ── MENÚ MÓVIL ── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
+    <a href="#" class="mobile-link">Acerca de</a>
+    <a href="#" class="mobile-link">Servicios</a>
+    <a href="#" class="mobile-link">Contacto</a>
+    <a href="tel:+51999999999" class="mobile-phone">📞 +51 999 999 999</a>
+  </div>
+
   <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-bg"></div>
+  <section class="hero" aria-label="Inicio">
+    <div class="hero-bg" role="img" aria-label="Sala moderna con cieloraso de drywall instalado por DrywallPro Lima"></div>
 
     <div class="hero-text anim-fade-left">
       <div class="hero-line"></div>
       <p class="hero-tagline">
-        DrywallPro: <em>la elección correcta para<br>sus necesidades de drywall.</em>
+        DrywallPro: <em>instalación y reparación de drywall<br>en Lima con garantía.</em>
       </p>
     </div>
 
     <div class="hero-box anim-fade-right">
       <span class="hero-box-label">¡Empiece! Llamada:</span>
-      <div class="hero-box-number">+51 999<br>999 999</div>
+      <div class="hero-box-number">+51 999 999 999</div>
       <a href="#" class="hero-box-cta">CONTACTO →</a>
     </div>
   </section>
@@ -175,6 +286,76 @@
     </svg>
     <span class="whatsapp-tooltip">¡Escribinos!</span>
   </a>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">🏗️</span>
+          <div>
+            <span class="footer-logo-name">DrywallPro</span>
+            <span class="footer-logo-tag">Calidad. A tiempo.</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Especialistas en instalación y reparación de drywall en Lima.
+          Tabiques, cielorrasos y acabados con garantía.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/51999999999" aria-label="WhatsApp" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.112 1.527 5.836L.057 23.625a.75.75 0 0 0 .921.919l5.934-1.516A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.96 9.96 0 0 1-5.126-1.41l-.368-.217-3.813.975.999-3.72-.24-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Servicios</h4>
+        <ul class="footer-links">
+          <li><a href="#">Tabiques y divisorios</a></li>
+          <li><a href="#">Cielorrasos</a></li>
+          <li><a href="#">Reparaciones</a></li>
+          <li><a href="#">Proyectos comerciales</a></li>
+          <li><a href="#">Proyectos residenciales</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contacto</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="fc-icon">📞</span>
+            <a href="tel:+51999999999">+51 999 999 999</a>
+          </li>
+          <li>
+            <span class="fc-icon">💬</span>
+            <a href="https://wa.me/51999999999" target="_blank">WhatsApp</a>
+          </li>
+          <li>
+            <span class="fc-icon">📍</span>
+            <span>Lima, Perú</span>
+          </li>
+          <li>
+            <span class="fc-icon">🕐</span>
+            <span>Lun–Vie 8:00–18:00<br>Sáb 8:00–14:00</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 DrywallPro — Todos los derechos reservados</p>
+      <p class="footer-credit">Desarrollado por Daniel Pachas</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
