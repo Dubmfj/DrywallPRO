@@ -94,10 +94,38 @@
   <!-- Fuentes y estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../static/css/styles.css"/>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
+
+  <!-- ── PRELOADER ── -->
+  <div id="preloader">
+    <div class="pl-bg"></div>
+    <div class="pl-lines">
+      <div class="pl-line pl-line--1"></div>
+      <div class="pl-line pl-line--2"></div>
+      <div class="pl-line pl-line--3"></div>
+    </div>
+    <div class="pl-content">
+      <div class="pl-logo">
+        <span class="pl-icon">🏗️</span>
+        <div class="pl-logo-text">
+          <span class="pl-name">DrywallPro</span>
+          <span class="pl-tagline">Calidad. A tiempo.</span>
+        </div>
+      </div>
+      <div class="pl-divider"></div>
+      <div class="pl-counter-wrap">
+        <span class="pl-counter">0</span><span class="pl-pct-sym">%</span>
+      </div>
+      <div class="pl-bar-wrap">
+        <div class="pl-bar"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ── HEADER ── -->
   <header class="anim-header">
@@ -119,8 +147,8 @@
 
       <nav id="main-nav">
         <a href="#">Acerca de</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
 
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -158,9 +186,9 @@
     </div>
 
     <div class="hero-box anim-fade-right">
-      <span class="hero-box-label">¡Empiece! Llamada:</span>
-      <div class="hero-box-number">+51 999 999 999</div>
-      <a href="#" class="hero-box-cta">CONTACTO →</a>
+      <span class="hero-box-label">Llamada sin cargo</span>
+      <a href="tel:+51999999999" class="hero-box-number">+51 999 999 999</a>
+      <a href="#" class="hero-box-cta">Solicitar presupuesto</a>
     </div>
   </section>
 
@@ -357,6 +385,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="../static/js/script.js"></script>
 </body>
 </html>

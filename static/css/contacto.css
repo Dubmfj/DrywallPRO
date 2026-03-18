@@ -1,0 +1,640 @@
+/* ══════════════════════════════════════
+   CONTACTO.CSS — estilos específicos
+   Depende de: styles.css (variables y base)
+══════════════════════════════════════ */
+
+/* ── Hero ── */
+.cnt-hero {
+  position: relative;
+  background: var(--green-dark);
+  padding: 9rem 5% 6rem;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  margin-bottom: -3rem;
+}
+
+.cnt-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,197,24,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,197,24,.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 100% at 20% 50%, black 30%, transparent 100%);
+}
+
+/* Marca de agua */
+.cnt-hero::after {
+  content: 'CONTACTO';
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  color: rgba(245,197,24,.04);
+  letter-spacing: 8px;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cnt-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+}
+
+.cnt-hero-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.cnt-hero-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.cnt-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 0.9;
+  color: var(--white);
+  letter-spacing: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.cnt-hero-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.6);
+  line-height: 1.75;
+  max-width: 420px;
+}
+
+.cnt-breadcrumb {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 5%;
+  z-index: 1;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cnt-breadcrumb a             { color: rgba(255,255,255,.3); text-decoration: none; transition: color 0.2s; }
+.cnt-breadcrumb a:hover       { color: var(--yellow); }
+.cnt-breadcrumb span          { color: rgba(255,255,255,.15); }
+
+/* ── Canales ── */
+.cnt-channels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  z-index: 2;
+}
+
+.cnt-channel {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.8rem 2rem;
+  text-decoration: none;
+  background: var(--white);
+  border-right: 1px solid rgba(0,0,0,.07);
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cnt-channel:last-child        { border-right: none; }
+.cnt-channel:hover             { background: #f7f6f2; border-top-color: var(--yellow); }
+
+/* Número ordinal de fondo */
+.cnt-channel::before {
+  content: attr(data-num);
+  position: absolute;
+  right: -0.5rem;
+  bottom: -1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: rgba(0,0,0,.04);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -2px;
+}
+
+.cnt-channel-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: var(--green-mid);
+  transition: color 0.2s;
+}
+
+.cnt-channel-icon svg          { width: 100%; height: 100%; }
+.cnt-channel--wa .cnt-channel-icon { color: #25d366; }
+
+.cnt-channel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.cnt-channel-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.3);
+}
+
+.cnt-channel-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: var(--green-dark);
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cnt-channel-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cnt-channel-arrow {
+  font-size: 1.1rem;
+  color: rgba(0,0,0,.15);
+  flex-shrink: 0;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.cnt-channel:hover .cnt-channel-arrow {
+  transform: translateX(5px);
+  color: var(--green-mid);
+}
+
+/* ── Form + info ── */
+.cnt-main {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  background: var(--cream);
+}
+
+/* ── Formulario ── */
+.cnt-form-wrap {
+  padding: 4rem 4rem 4rem 5%;
+  background: var(--white);
+  border-right: 1px solid rgba(0,0,0,.06);
+}
+
+.cnt-form-header            { margin-bottom: 2.5rem; }
+
+.cnt-form-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cnt-form-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: 3px;
+  color: var(--green-dark);
+  line-height: 0.95;
+  margin-bottom: 0.8rem;
+}
+
+.cnt-form-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: #888;
+  line-height: 1.65;
+  max-width: 400px;
+}
+
+/* Fields */
+.cnt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.cnt-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.cnt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cnt-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.cnt-label-opt {
+  font-weight: 400;
+  color: #bbb;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cnt-input {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0,.1);
+  padding: 0.7rem 0.8rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cnt-input:focus {
+  border-bottom-color: var(--yellow);
+  background: rgba(245,197,24,.03);
+}
+
+.cnt-input::placeholder        { color: #bbb; }
+
+.cnt-select-wrap {
+  position: relative;
+}
+
+.cnt-select                    { cursor: pointer; padding-right: 2.5rem; }
+
+.cnt-select-arrow {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #aaa;
+  pointer-events: none;
+}
+
+.cnt-textarea                  { resize: vertical; min-height: 100px; line-height: 1.5; }
+
+/* Botón submit */
+.cnt-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: #25d366;
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s, gap 0.2s;
+  margin-top: 0.3rem;
+}
+
+.cnt-submit:hover              { background: #1da851; gap: 1rem; }
+
+.cnt-submit-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.cnt-form-note {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.68rem;
+  color: #bbb;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ── Panel de info ── */
+.cnt-info {
+  padding: 3rem 2.5rem;
+  background: var(--green-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid blueprint en el panel */
+.cnt-info::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,197,24,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,197,24,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.cnt-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: relative;
+  z-index: 1;
+}
+
+.cnt-info-block:first-child    { padding-top: 0; }
+.cnt-info-block:last-child     { border-bottom: none; }
+
+.cnt-info-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cnt-info-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(245,197,24,.15);
+}
+
+.cnt-info-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.45);
+  line-height: 1.65;
+}
+
+/* Horarios */
+.cnt-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cnt-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255,255,255,.04);
+  border-left: 2px solid rgba(245,197,24,.3);
+}
+
+.cnt-hours-row--closed {
+  background: transparent;
+  border-left-color: rgba(255,255,255,.06);
+}
+
+.cnt-hours-day {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.7);
+  letter-spacing: 0.5px;
+}
+
+.cnt-hours-time {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: var(--yellow);
+}
+
+.cnt-hours-row--closed .cnt-hours-time { color: rgba(255,255,255,.2); }
+
+/* Zonas */
+.cnt-zones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.cnt-zones span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 0.2rem 0.55rem;
+}
+
+/* Garantía */
+.cnt-info-block--highlight     { background: transparent; }
+
+.cnt-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: rgba(245,197,24,.08);
+  border: 1px solid rgba(245,197,24,.15);
+  padding: 1.2rem;
+}
+
+.cnt-guarantee-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: var(--yellow);
+  line-height: 1;
+  letter-spacing: -2px;
+  flex-shrink: 0;
+}
+
+.cnt-guarantee-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cnt-guarantee-text strong {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.cnt-guarantee-text span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.4);
+}
+
+/* Redes */
+.cnt-social {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cnt-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  padding: 0.55rem 0.8rem;
+  transition: background 0.2s, color 0.2s;
+  border-left: 2px solid transparent;
+}
+
+.cnt-social-btn:hover {
+  background: rgba(255,255,255,.05);
+  color: var(--yellow);
+  border-left-color: var(--yellow);
+}
+
+.cnt-social-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════
+   TABLET GRANDE (≤ 1100px)
+════════════════════════════ */
+@media (max-width: 1100px) {
+  .cnt-main                    { grid-template-columns: 1fr 300px; }
+  .cnt-form-wrap               { padding: 3.5rem 3rem 3.5rem 4%; }
+}
+
+/* ════════════════════════════
+   TABLET (≤ 960px)
+════════════════════════════ */
+@media (max-width: 960px) {
+  .cnt-hero                    { padding: 8rem 5% 7rem; clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%); }
+  .cnt-hero::after             { display: none; }
+  .cnt-channels                { grid-template-columns: 1fr; }
+  .cnt-channel                 { border-right: none; border-bottom: 1px solid rgba(0,0,0,.06); border-top-width: 0; border-left: 3px solid transparent; }
+  .cnt-channel:hover           { border-top-color: transparent; border-left-color: var(--yellow); }
+  .cnt-channel:last-child      { border-bottom: none; }
+  .cnt-main                    { grid-template-columns: 1fr; }
+  .cnt-form-wrap               { padding: 3.5rem 4%; border-right: none; border-bottom: 1px solid rgba(0,0,0,.06); }
+  .cnt-info                    { padding: 3rem 4%; }
+}
+
+/* ════════════════════════════
+   TABLET CHICA (≤ 768px)
+════════════════════════════ */
+@media (max-width: 768px) {
+  .cnt-hero                    { padding: 7.5rem 4% 6rem; }
+  .cnt-breadcrumb              { display: none; }
+  .cnt-form-wrap               { padding: 3rem 4%; }
+  .cnt-info                    { padding: 2.5rem 4%; }
+}
+
+/* ════════════════════════════
+   MÓVIL (≤ 680px)
+════════════════════════════ */
+@media (max-width: 680px) {
+  /* Hero */
+  .cnt-hero                    { padding: 7rem 1.2rem 5rem; clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
+  .cnt-hero h1                 { font-size: clamp(2.8rem, 12vw, 3.8rem); letter-spacing: 2px; }
+  .cnt-hero-desc               { font-size: 0.86rem; }
+
+  /* Canales — full width táctil */
+  .cnt-channel {
+    padding: 1.1rem 1.2rem;
+    gap: 1rem;
+  }
+  .cnt-channel-icon            { width: 30px; height: 30px; }
+  .cnt-channel-title           { font-size: 1.2rem; }
+  .cnt-channel-sub             { font-size: 0.63rem; }
+
+  /* Form */
+  .cnt-form-wrap               { padding: 2.5rem 1.2rem; }
+  .cnt-form-header             { margin-bottom: 2rem; }
+  .cnt-form-title              { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .cnt-field-row               { grid-template-columns: 1fr; gap: 1rem; }
+  .cnt-form                    { gap: 1rem; }
+  .cnt-submit                  { font-size: 0.68rem; padding: 0.9rem 1.2rem; }
+
+  /* Info */
+  .cnt-info                    { padding: 2.5rem 1.2rem; }
+  .cnt-info-block              { padding: 1.4rem 0; }
+  .cnt-hours-day               { font-size: 0.72rem; }
+  .cnt-hours-time              { font-size: 0.9rem; }
+  .cnt-guarantee-num           { font-size: 3.5rem; }
+
+  /* Redes horizontal */
+  .cnt-social                  { flex-direction: row; flex-wrap: wrap; gap: 0.4rem; }
+  .cnt-social-btn              { flex: 1; min-width: 100px; justify-content: center; border-left: none; border-bottom: 2px solid transparent; }
+  .cnt-social-btn:hover        { border-left: none; border-bottom-color: var(--yellow); }
+}
+
+/* ════════════════════════════
+   MÓVIL CHICO (≤ 400px)
+════════════════════════════ */
+@media (max-width: 400px) {
+  .cnt-hero h1                 { font-size: 2.5rem; }
+  .cnt-channel-title           { font-size: 1rem; }
+  .cnt-form-wrap               { padding: 2rem 1rem; }
+  .cnt-info                    { padding: 2rem 1rem; }
+}

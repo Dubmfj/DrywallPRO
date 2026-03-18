@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Acerca de — DrywallPro Lima | Quiénes Somos</title>
+  <meta name="description" content="Conocé el equipo detrás de DrywallPro. Especialistas en drywall en Lima con años de experiencia, más de 150 proyectos terminados y garantía en cada obra."/>
+  <meta name="keywords"    content="DrywallPro Lima, quienes somos drywall, empresa drywall Lima, equipo drywall"/>
+  <meta name="author"      content="DrywallPro"/>
+  <meta name="robots"      content="index, follow"/>
+  <link rel="canonical"    href="https://www.TU-DOMINIO.com/nosotros.html"/>
+
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://www.TU-DOMINIO.com/nosotros.html"/>
+  <meta property="og:title"       content="Acerca de — DrywallPro Lima"/>
+  <meta property="og:description" content="El equipo detrás de DrywallPro. Más de 150 proyectos en Lima con garantía."/>
+  <meta property="og:image"       content="https://www.TU-DOMINIO.com/img/og-image.jpg"/>
+  <meta property="og:locale"      content="es_PE"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="../static/css/styles.css"/>
+  <link rel="stylesheet" href="../static/css/nosotros.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- ── PRELOADER ── -->
+  <div id="preloader">
+    <div class="pl-bg"></div>
+    <div class="pl-lines">
+      <div class="pl-line pl-line--1"></div>
+      <div class="pl-line pl-line--2"></div>
+      <div class="pl-line pl-line--3"></div>
+    </div>
+    <div class="pl-content">
+      <div class="pl-logo">
+        <span class="pl-icon">🏗️</span>
+        <div class="pl-logo-text">
+          <span class="pl-name">DrywallPro</span>
+          <span class="pl-tagline">Calidad. A tiempo.</span>
+        </div>
+      </div>
+      <div class="pl-divider"></div>
+      <div class="pl-counter-wrap">
+        <span class="pl-counter">0</span><span class="pl-pct-sym">%</span>
+      </div>
+      <div class="pl-bar-wrap">
+        <div class="pl-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HEADER ── -->
+  <header class="anim-header">
+    <div class="header-main">
+      <div class="logo">
+        <div class="logo-icon"><a href="index.html">🏗️</a></div>
+        <div class="logo-text">
+          <span class="logo-name"><a href="index.html">DrywallPro</a></span>
+          <span class="logo-tagline"><a href="index.html">Calidad. A tiempo.</a></span>
+        </div>
+      </div>
+      <nav id="main-nav">
+        <a href="nosotros.html" style="color:var(--green-mid); font-weight:700;">Acerca de</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header-phone">
+      <span class="phone-label">¡Empiece! Llamada:</span>
+      <a href="tel:+51999999999" class="phone-number">+51 999 999 999</a>
+    </div>
+  </header>
+
+  <!-- ── MENÚ MÓVIL ── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
+    <a href="nosotros.html"  class="mobile-link" style="color:var(--yellow);">Acerca de</a>
+    <a href="servicios.html" class="mobile-link">Servicios</a>
+    <a href="contacto.html"  class="mobile-link">Contacto</a>
+    <a href="tel:+51999999999" class="mobile-phone">📞 +51 999 999 999</a>
+  </div>
+
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="nos-hero">
+    <div class="nos-hero-inner reveal">
+      <p class="nos-hero-label">Quiénes somos</p>
+      <h1>Detrás de<br>cada <span>obra.</span></h1>
+      <p class="nos-hero-desc">
+        No somos solo mano de obra — somos el equipo que
+        cuida cada detalle como si fuera su propia casa.
+        Desde el primer presupuesto hasta el último acabado.
+      </p>
+    </div>
+    <nav class="nos-breadcrumb" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a>
+      <span>/</span>
+      <span>Acerca de</span>
+    </nav>
+  </section>
+
+  <!-- ════════════════════════════════════
+       NÚMEROS — barra de stats
+  ════════════════════════════════════ -->
+  <div class="nos-stats reveal">
+    <div class="nos-stat">
+      <span class="nos-stat-num" data-count="8" data-suffix="+">0+</span>
+      <span class="nos-stat-label">Años de experiencia</span>
+    </div>
+    <div class="nos-stat-sep"></div>
+    <div class="nos-stat">
+      <span class="nos-stat-num" data-count="150" data-suffix="+">0+</span>
+      <span class="nos-stat-label">Proyectos terminados</span>
+    </div>
+    <div class="nos-stat-sep"></div>
+    <div class="nos-stat">
+      <span class="nos-stat-num" data-count="100" data-suffix="%">0%</span>
+      <span class="nos-stat-label">Garantía de obra</span>
+    </div>
+    <div class="nos-stat-sep"></div>
+    <div class="nos-stat">
+      <span class="nos-stat-num" data-count="24" data-suffix="h">0h</span>
+      <span class="nos-stat-label">Respuesta de presupuesto</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       HISTORIA
+  ════════════════════════════════════ -->
+  <section class="nos-story">
+    <div class="nos-story-text reveal" data-delay="0">
+      <p class="nos-section-label">Nuestra historia</p>
+      <h2 class="nos-section-title">De obra en obra,<br>construimos <span>reputación.</span></h2>
+      <p class="nos-story-desc">
+        <!-- Reemplazar con la historia real de Pablo -->
+        DrywallPro nació de la convicción de que el drywall bien hecho
+        transforma espacios. Con más de 8 años en el rubro, empezamos
+        con proyectos pequeños en Lima y fuimos creciendo a fuerza de
+        trabajo prolijo y clientes que nos recomiendan.
+      </p>
+      <p class="nos-story-desc">
+        Hoy somos un equipo especializado que atiende tanto hogares
+        como locales comerciales, siempre con los mismos estándares:
+        materiales certificados, plazos cumplidos y limpieza total
+        al terminar cada trabajo.
+      </p>
+    </div>
+
+    <div class="nos-story-visual reveal" data-delay="150">
+      <!-- Reemplazar src con foto real del equipo/obra -->
+      <div class="nos-photo-main">
+        <div class="nos-photo-placeholder">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="48" height="48" rx="1" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+            <circle cx="32" cy="26" r="8" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+            <path d="M14 52 Q22 38 32 40 Q42 42 50 52" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".4"/>
+          </svg>
+          <span>Foto del equipo</span>
+        </div>
+      </div>
+      <div class="nos-photo-badge">
+        <span class="nos-badge-num">+150</span>
+        <span class="nos-badge-text">proyectos<br>en Lima</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       VALORES
+  ════════════════════════════════════ -->
+  <section class="nos-values">
+    <div class="nos-values-header reveal">
+      <p class="nos-section-label nos-section-label--light">Cómo trabajamos</p>
+      <h2 class="nos-section-title nos-section-title--light">Los valores que<br>definen cada <span>trabajo.</span></h2>
+    </div>
+
+    <div class="nos-values-grid">
+
+      <div class="nos-value reveal" data-delay="0">
+        <div class="nos-value-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+            <polyline points="16,24 22,30 32,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="nos-value-num">01</div>
+        <h3 class="nos-value-title">Calidad sin negociar</h3>
+        <p class="nos-value-desc">Usamos solo materiales certificados. Cada placa, perfil y masilla pasa por nuestra revisión antes de instalarse.</p>
+      </div>
+
+      <div class="nos-value reveal" data-delay="100">
+        <div class="nos-value-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="24" y1="12" x2="24" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="24" y1="24" x2="32" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nos-value-num">02</div>
+        <h3 class="nos-value-title">Puntualidad</h3>
+        <p class="nos-value-desc">Llegamos a la hora acordada con todo el material. Los tiempos de entrega se cumplen — o te avisamos con anticipación.</p>
+      </div>
+
+      <div class="nos-value reveal" data-delay="200">
+        <div class="nos-value-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="28" height="28" rx="1" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+            <line x1="10" y1="30" x2="38" y2="30" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+            <line x1="20" y1="10" x2="20" y2="38" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+            <line x1="30" y1="10" x2="30" y2="38" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="nos-value-num">03</div>
+        <h3 class="nos-value-title">Prolijos hasta el final</h3>
+        <p class="nos-value-desc">Dejamos el espacio como lo encontramos. Limpieza total al terminar cada jornada — sin escombros, sin polvo, sin excusas.</p>
+      </div>
+
+      <div class="nos-value reveal" data-delay="300">
+        <div class="nos-value-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8 L28 18 L40 18 L30 26 L34 36 L24 29 L14 36 L18 26 L8 18 L20 18 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="nos-value-num">04</div>
+        <h3 class="nos-value-title">Garantía real</h3>
+        <p class="nos-value-desc">15 días de garantía por escrito después de cada entrega. Si algo no quedó bien, lo corregimos sin costo ni discusión.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       EQUIPO
+  ════════════════════════════════════ -->
+  <section class="nos-team">
+    <div class="nos-team-header reveal">
+      <p class="nos-section-label">El equipo</p>
+      <h2 class="nos-section-title">Personas que<br>hacen la <span>diferencia.</span></h2>
+    </div>
+
+    <div class="nos-team-grid">
+
+      <!-- Cambiar con datos reales de Pablo y su equipo -->
+      <div class="nos-member reveal" data-delay="0">
+        <div class="nos-member-photo">
+          <div class="nos-member-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5" opacity=".4"/><path d="M8 42 Q14 30 24 30 Q34 30 40 42" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".4"/></svg>
+          </div>
+          <div class="nos-member-overlay">
+            <a href="https://wa.me/51999999999" target="_blank" class="nos-member-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.112 1.527 5.836L.057 23.625a.75.75 0 0 0 .921.919l5.934-1.516A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.96 9.96 0 0 1-5.126-1.41l-.368-.217-3.813.975.999-3.72-.24-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              Contactar
+            </a>
+          </div>
+        </div>
+        <div class="nos-member-info">
+          <h3 class="nos-member-name">Pablo Morales</h3>
+          <span class="nos-member-role">Fundador &amp; Jefe de Obra</span>
+          <p class="nos-member-bio">+8 años en instalación de drywall. Supervisa cada proyecto personalmente para asegurar el acabado final.</p>
+        </div>
+      </div>
+
+      <!-- Agregar más miembros del equipo cuando Pablo los confirme -->
+      <div class="nos-member reveal" data-delay="100">
+        <div class="nos-member-photo">
+          <div class="nos-member-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5" opacity=".4"/><path d="M8 42 Q14 30 24 30 Q34 30 40 42" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".4"/></svg>
+          </div>
+        </div>
+        <div class="nos-member-info">
+          <h3 class="nos-member-name"><!-- Nombre --></h3>
+          <span class="nos-member-role">Instalador Especialista</span>
+          <p class="nos-member-bio"><!-- Bio del integrante --></p>
+        </div>
+      </div>
+
+      <div class="nos-member reveal" data-delay="200">
+        <div class="nos-member-photo">
+          <div class="nos-member-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5" opacity=".4"/><path d="M8 42 Q14 30 24 30 Q34 30 40 42" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".4"/></svg>
+          </div>
+        </div>
+        <div class="nos-member-info">
+          <h3 class="nos-member-name"><!-- Nombre --></h3>
+          <span class="nos-member-role">Masillador &amp; Acabados</span>
+          <p class="nos-member-bio"><!-- Bio del integrante --></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       CTA FINAL
+  ════════════════════════════════════ -->
+  <section class="nos-cta reveal">
+    <div class="nos-cta-text">
+      <span class="nos-cta-label">¿Trabajamos juntos?</span>
+      <h2 class="nos-cta-title">Contanos tu proyecto.<br>Te respondemos hoy.</h2>
+    </div>
+    <div class="nos-cta-actions">
+      <a href="https://wa.me/51999999999?text=Hola,%20quiero%20un%20presupuesto%20para%20drywall" target="_blank" class="nos-cta-btn-primary">
+        Escribir por WhatsApp
+      </a>
+      <a href="servicios.html" class="nos-cta-btn-secondary">
+        Ver servicios
+      </a>
+    </div>
+  </section>
+
+  <!-- ── WHATSAPP FLOTANTE ── -->
+  <a href="https://wa.me/51999999999" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.736 5.469 2.027 7.774L0 32l8.454-2.007A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.756-1.839l-.484-.287-5.02 1.193 1.243-4.893-.317-.503A13.234 13.234 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.878c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.63-.199-.896.199-.265.398-1.029 1.295-1.261 1.56-.232.265-.465.298-.863.1-.398-.199-1.681-.619-3.202-1.977-1.183-1.056-1.981-2.36-2.213-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.697.1-1.062.497-.365.398-1.394 1.362-1.394 3.322s1.427 3.853 1.626 4.118c.199.265 2.808 4.287 6.803 5.011.951.163 1.693.261 2.271.334.954.121 1.823.104 2.51-.061.765-.183 2.354-.963 2.686-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.265-.763-.464z"/>
+    </svg>
+    <span class="whatsapp-tooltip">¡Escribinos!</span>
+  </a>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">🏗️</span>
+          <div>
+            <span class="footer-logo-name">DrywallPro</span>
+            <span class="footer-logo-tag">Calidad. A tiempo.</span>
+          </div>
+        </div>
+        <p class="footer-desc">Especialistas en instalación y reparación de drywall en Lima. Tabiques, cielorrasos y acabados con garantía.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" class="social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/51999999999" aria-label="WhatsApp" class="social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.112 1.527 5.836L.057 23.625a.75.75 0 0 0 .921.919l5.934-1.516A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.96 9.96 0 0 1-5.126-1.41l-.368-.217-3.813.975.999-3.72-.24-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Servicios</h4>
+        <ul class="footer-links">
+          <li><a href="servicios.html">Tabiques y divisorios</a></li>
+          <li><a href="servicios.html">Cielorrasos</a></li>
+          <li><a href="servicios.html">Reparaciones</a></li>
+          <li><a href="servicios.html">Proyectos comerciales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contacto</h4>
+        <ul class="footer-contact-list">
+          <li><span class="fc-icon">📞</span><a href="tel:+51999999999">+51 999 999 999</a></li>
+          <li><span class="fc-icon">💬</span><a href="https://wa.me/51999999999" target="_blank">WhatsApp</a></li>
+          <li><span class="fc-icon">📍</span><span>Lima, Perú</span></li>
+          <li><span class="fc-icon">🕐</span><span>Lun–Vie 8:00–18:00<br>Sáb 8:00–14:00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DrywallPro — Todos los derechos reservados</p>
+      <p class="footer-credit">Desarrollado por Daniel Pachas</p>
+    </div>
+  </footer>
+
+  <script src="../static/js/script.js"></script>
+</body>
+</html>

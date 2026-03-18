@@ -1,3 +1,57 @@
+/* ─────────────────────────────────────
+   PRELOADER — GSAP
+───────────────────────────────────── */
+(function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  const plLogo    = document.querySelector('.pl-logo');
+  const plDivider = document.querySelector('.pl-divider');
+  const plCtrWrap = document.querySelector('.pl-counter-wrap');
+  const plCounter = document.querySelector('.pl-counter');
+  const plBarWrap = document.querySelector('.pl-bar-wrap');
+  const plBar     = document.querySelector('.pl-bar');
+
+  document.body.style.overflow = 'hidden';
+
+  const tl = gsap.timeline();
+
+  // 1) Logo entra
+  tl.to(plLogo, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.2)
+
+  // 2) Línea divisora se expande
+    .to(plDivider, { opacity: 1, width: 'min(400px, 80vw)', duration: 0.6, ease: 'power2.out' }, 0.7)
+
+  // 3) Contador y barra aparecen
+    .to(plCtrWrap, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 0.9)
+    .to(plBarWrap, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 1.0)
+
+  // 4) Barra + contador 0 → 100
+    .to(plBar, {
+      width: '100%',
+      duration: 1.8,
+      ease: 'power1.inOut',
+      onUpdate() {
+        plCounter.textContent = Math.round(this.progress() * 100);
+      }
+    }, 1.1)
+
+  // 5) Flash amarillo al llegar a 100
+    .to(plCounter, { color: '#f5c518', duration: 0.2, ease: 'power2.in' }, '+=0.05')
+
+  // 6) Fade out contenido
+    .to(plLogo,    { opacity: 0, y: -20, duration: 0.35, ease: 'power2.in' }, '+=0.15')
+    .to([plCtrWrap, plBarWrap, plDivider], { opacity: 0, duration: 0.3, stagger: 0.05, ease: 'power2.in' }, '<0.05')
+
+  // 7) Preloader sube y revela la página
+    .to('#preloader', { yPercent: -100, duration: 0.75, ease: 'power4.inOut' }, '-=0.05')
+
+  // 8) Limpieza
+    .call(() => {
+      preloader.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
 /* ─────────────────────────────────────
@@ -121,7 +175,9 @@ const counterObserver = new IntersectionObserver(
   { threshold: 0.3 }
 );
 
-const statsBar = document.querySelector('.stats-bar');
+const statsBar  = document.querySelector('.stats-bar');
+const nosStats  = document.querySelector('.nos-stats');
 if (statsBar) counterObserver.observe(statsBar);
+if (nosStats)  counterObserver.observe(nosStats);
 
 }); // fin DOMContentLoaded

@@ -1,0 +1,667 @@
+/* ══════════════════════════════════════
+   NOSOTROS.CSS — estilos específicos
+   Depende de: styles.css (variables y base)
+══════════════════════════════════════ */
+
+/* ── Hero ── */
+.nos-hero {
+  position: relative;
+  background: var(--green-dark);
+  padding: 9rem 5% 6rem;
+  overflow: hidden;
+}
+
+.nos-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,197,24,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,197,24,.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 100% at 20% 50%, black 30%, transparent 100%);
+}
+
+/* Marca de agua */
+.nos-hero::after {
+  content: 'NOSOTROS';
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  color: rgba(245,197,24,.04);
+  letter-spacing: 8px;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nos-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.nos-hero-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.nos-hero-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.nos-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 0.9;
+  color: var(--white);
+  letter-spacing: 4px;
+  margin-bottom: 1.4rem;
+}
+
+.nos-hero h1 span { color: var(--yellow); }
+
+.nos-hero-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.6);
+  line-height: 1.75;
+  max-width: 460px;
+}
+
+.nos-breadcrumb {
+  position: absolute;
+  bottom: 2rem;
+  left: 5%;
+  z-index: 1;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nos-breadcrumb a             { color: rgba(255,255,255,.3); text-decoration: none; transition: color 0.2s; }
+.nos-breadcrumb a:hover       { color: var(--yellow); }
+.nos-breadcrumb span          { color: rgba(255,255,255,.15); }
+
+/* ── Stats bar ── */
+.nos-stats {
+  background: var(--yellow);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) repeat(3, auto);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Para que el JS del index no interfiera usamos data-count aquí también */
+.nos-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 1.8rem 1rem;
+  position: relative;
+}
+
+.nos-stat-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(26,46,26,.12);
+}
+
+.nos-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  color: var(--green-dark);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.nos-stat-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(26,46,26,.55);
+  text-align: center;
+}
+
+/* ── Labels y títulos reutilizables ── */
+.nos-section-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.nos-section-label::before {
+  content: '';
+  width: 24px; height: 2px;
+  background: var(--green-mid);
+  flex-shrink: 0;
+}
+
+.nos-section-label--light      { color: rgba(245,197,24,.8); }
+.nos-section-label--light::before { background: rgba(245,197,24,.8); }
+
+.nos-section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  letter-spacing: 2px;
+  color: var(--green-dark);
+  line-height: 0.95;
+}
+
+.nos-section-title span        { color: var(--yellow-dark); }
+.nos-section-title--light      { color: var(--white); }
+.nos-section-title--light span { color: var(--yellow); }
+
+/* ── Historia ── */
+.nos-story {
+  background: var(--cream);
+  padding: 6rem 5%;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: center;
+}
+
+.nos-story-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.8;
+  margin-top: 1.4rem;
+}
+
+.nos-story-desc + .nos-story-desc {
+  margin-top: 1rem;
+}
+
+/* Foto principal */
+.nos-story-visual {
+  position: relative;
+}
+
+.nos-photo-main {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--green-dark);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Imagen real — reemplazar con <img> cuando Pablo mande foto */
+.nos-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: rgba(255,255,255,.25);
+}
+
+.nos-photo-placeholder svg {
+  width: 64px;
+  height: 64px;
+}
+
+.nos-photo-placeholder span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Badge flotante */
+.nos-photo-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  background: var(--yellow);
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nos-badge-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.6rem;
+  color: var(--green-dark);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.nos-badge-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  line-height: 1.4;
+}
+
+/* ── Valores ── */
+.nos-values {
+  background: var(--green-dark);
+  padding: 6rem 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.nos-values::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,197,24,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,197,24,.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+.nos-values-header {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.nos-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.nos-value {
+  padding: 2.5rem 2rem 2.5rem 0;
+  border-right: 1px solid rgba(255,255,255,.06);
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.nos-value:last-child          { border-right: none; padding-right: 0; }
+.nos-value:not(:first-child)   { padding-left: 2rem; }
+
+.nos-value-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--yellow);
+  margin-bottom: 0.6rem;
+}
+
+.nos-value-icon svg            { width: 100%; height: 100%; }
+
+.nos-value-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: rgba(245,197,24,.3);
+}
+
+.nos-value-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.nos-value-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+}
+
+/* ── Equipo ── */
+.nos-team {
+  background: var(--cream);
+  padding: 6rem 5%;
+}
+
+.nos-team-header {
+  margin-bottom: 3.5rem;
+}
+
+.nos-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.nos-member {
+  background: var(--white);
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.nos-member:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,.1);
+  transform: translateY(-3px);
+}
+
+.nos-member-photo {
+  aspect-ratio: 1 / 1;
+  background: var(--green-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.nos-member-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.2);
+}
+
+.nos-member-placeholder svg {
+  width: 64px;
+  height: 64px;
+}
+
+/* Overlay con botón de WhatsApp */
+.nos-member-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,46,26,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.nos-member:hover .nos-member-overlay { opacity: 1; }
+
+.nos-member-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25d366;
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.65rem 1.2rem;
+  transition: background 0.2s;
+}
+
+.nos-member-wa:hover            { background: #1da851; }
+
+.nos-member-info {
+  padding: 1.4rem 1.6rem 1.6rem;
+  border-top: 2px solid var(--yellow);
+}
+
+.nos-member-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: var(--green-dark);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.nos-member-role {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.nos-member-bio {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #777;
+  line-height: 1.65;
+}
+
+/* ── CTA ── */
+.nos-cta {
+  background: var(--yellow);
+  padding: 4rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.nos-cta::before {
+  content: 'DRYWALL';
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: rgba(26,46,26,.06);
+  letter-spacing: 6px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.nos-cta-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(26,46,26,.45);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.nos-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 2px;
+  color: var(--green-dark);
+  line-height: 0.95;
+}
+
+.nos-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.nos-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--green-dark);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.95rem 2rem;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.nos-cta-btn-primary:hover     { background: #0f1c0f; }
+
+.nos-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--green-dark);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.95rem 1.6rem;
+  border: 2px solid var(--green-dark);
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.nos-cta-btn-secondary:hover {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+/* ════════════════════════════
+   TABLET (≤ 960px)
+════════════════════════════ */
+@media (max-width: 960px) {
+  .nos-hero              { padding: 8rem 5% 5rem; }
+  .nos-hero::after       { display: none; }
+
+  .nos-stats             { grid-template-columns: repeat(2, 1fr) repeat(1, auto) repeat(2, 1fr); }
+  .nos-stat-sep:nth-child(4) { display: none; }
+  .nos-stat              { padding: 1.4rem 0.8rem; border-bottom: 1px solid rgba(26,46,26,.1); }
+
+  .nos-story             { grid-template-columns: 1fr; gap: 3rem; }
+  .nos-story-visual      { max-width: 480px; }
+  .nos-photo-badge       { bottom: -1rem; left: -1rem; }
+
+  .nos-values-grid       { grid-template-columns: repeat(2, 1fr); gap: 2px; background: rgba(255,255,255,.06); }
+  .nos-value             { padding: 2rem; border-right: none; }
+  .nos-value:not(:first-child) { padding-left: 2rem; }
+
+  .nos-team-grid         { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ════════════════════════════
+   TABLET CHICA (≤ 768px)
+════════════════════════════ */
+@media (max-width: 768px) {
+  .nos-hero              { padding: 7rem 4% 4.5rem; }
+  .nos-breadcrumb        { display: none; }
+  .nos-story             { padding: 4rem 4%; }
+  .nos-values            { padding: 4rem 4%; }
+  .nos-team              { padding: 4rem 4%; }
+  .nos-cta               { padding: 3.5rem 4%; flex-direction: column; align-items: flex-start; }
+  .nos-cta-actions       { width: 100%; flex-direction: column; gap: 0.8rem; }
+  .nos-cta-btn-primary,
+  .nos-cta-btn-secondary { width: 100%; justify-content: center; }
+}
+
+/* ════════════════════════════
+   MÓVIL (≤ 680px)
+════════════════════════════ */
+@media (max-width: 680px) {
+  /* Hero */
+  .nos-hero              { padding: 5.5rem 1.1rem 3rem; }
+  .nos-hero h1           { font-size: clamp(2.6rem, 11vw, 3.4rem); letter-spacing: 2px; }
+  .nos-hero-desc         { font-size: 0.86rem; max-width: 100%; }
+
+  /* Stats — 2x2 */
+  .nos-stats             { grid-template-columns: repeat(2, 1fr); }
+  .nos-stat-sep          { display: none; }
+  .nos-stat              { padding: 1.3rem 0.8rem; border-bottom: 1px solid rgba(26,46,26,.1); border-right: 1px solid rgba(26,46,26,.1); }
+  .nos-stat:nth-child(odd)   { border-right: 1px solid rgba(26,46,26,.1); }
+  .nos-stat:nth-child(even)  { border-right: none; }
+  .nos-stat:nth-last-child(-n+2) { border-bottom: none; }
+  .nos-stat-num          { font-size: 2rem; }
+  .nos-stat-label        { font-size: 0.56rem; }
+
+  /* Historia */
+  .nos-story             { padding: 3rem 1.1rem; gap: 2.5rem; }
+  .nos-story-visual      { max-width: 100%; }
+  .nos-photo-badge       { position: static; margin-top: 1rem; }
+
+  /* Valores — 1 columna */
+  .nos-values            { padding: 3rem 1.1rem; }
+  .nos-values-header     { margin-bottom: 2.5rem; }
+  .nos-values-grid       { grid-template-columns: 1fr; gap: 0; background: none; }
+  .nos-value {
+    padding: 1.6rem 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .nos-value:not(:first-child) { padding-left: 0; }
+  .nos-value:last-child  { border-bottom: none; }
+  .nos-value-icon        { width: 34px; height: 34px; }
+  .nos-value-title       { font-size: 1.15rem; }
+
+  /* Equipo — 1 columna */
+  .nos-team              { padding: 3rem 1.1rem; }
+  .nos-team-header       { margin-bottom: 2rem; }
+  .nos-team-grid         { grid-template-columns: 1fr; gap: 1rem; }
+  .nos-member-photo      { aspect-ratio: 3/2; }
+  .nos-member-info       { padding: 1.1rem 1.2rem 1.3rem; }
+  .nos-member-name       { font-size: 1.2rem; }
+
+  /* CTA */
+  .nos-cta               { padding: 2.5rem 1.1rem; }
+  .nos-cta::before       { display: none; }
+  .nos-cta-title         { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  .nos-cta-actions       { width: 100%; flex-direction: column; gap: 0.7rem; }
+  .nos-cta-btn-primary,
+  .nos-cta-btn-secondary { width: 100%; justify-content: center; padding: 0.85rem; }
+}
+
+/* ════════════════════════════
+   MÓVIL CHICO (≤ 390px)
+════════════════════════════ */
+@media (max-width: 390px) {
+  .nos-hero              { padding: 5rem 0.9rem 2.5rem; }
+  .nos-hero h1           { font-size: 2.3rem; }
+  .nos-story             { padding: 2.5rem 0.9rem; }
+  .nos-values            { padding: 2.5rem 0.9rem; }
+  .nos-team              { padding: 2.5rem 0.9rem; }
+  .nos-cta               { padding: 2.2rem 0.9rem; }
+}
